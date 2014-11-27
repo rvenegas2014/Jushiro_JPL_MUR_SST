@@ -1,0 +1,47 @@
+% Add matlab script to 
+
+%1) Genera "Datos" = [Datos_SST Fechas Fechas_Matlab Season Año Mes Dia Semana]
+%Columna 1: Datos SST
+%Columna 2: Fechas (Day/Month/year) desde 01/01/2002 hasta 31/12/2014   
+%Columna 3: Columna 1 es la Columna 2 pero en formato matlab
+%Columna 4: Solo el dato Año (2002, 2003,…,2014)
+%Columna 5: Solo el dato Mes (1, 2,…,12)
+%Columna 6: Solo el dato Dia (1, 2,…,366)
+%Columna 7: Solo el dato Season (1,2,…,4) Winter [Jan-Feb-Mar], Spring [Apr-May-Jun], Summer [Jul-Aug-Sep], and Fall [Oct-Nov-Dec]
+%Columna 8: Solo el dato Semana (1, 2,…, 52)
+
+ 
+
+%2) For daily data =
+%a) For all years years:
+%- (DSST_max_all) = Daily maximum, for each Day, using all years (366 values)
+%- (DSST_min_all) = Daily minimum, for each Day, using all years (366 values)
+%- (DSST_Clim_all) = Daily mean, for each day, using all years (366 values)
+%- (DSST_STD_all) = Daily standard deviation, for each day, using all years (366 values)
+%- (DSST_Clim_max_all) = Daily maximum from DSST_Clim_all, after using all years (366 values)
+%- (DSST_Clim_min_all) = Daily minimum from DSST_Clim_all, after using all years (366 values)
+
+%b) For individual years, 13 years (2002 to 2014), need to replace “YEAR” in name of parameter:
+%- (DSST_max_YEAR) = Daily maximum, for each day, but for individual years (366 * 13 [years])
+%- (DSST_min_YEAR) = Daily minimum, for each day, but for individual years (366 * 13 [years])
+%- (DSST_YEAR)= Serie “Datos” cortada para cada año (2002, 2003,…2014).  
+
+%c) Difference between years and Climatology
+%- (DSST_Diff_YEAR_Clim) = DSST_YEAR - DSST_Clim_all
+
+ 
+
+%YEAR_2002=Datos(1:365,1);
+%YEAR_2003= Datos(366:730,1);
+%YEAR_2004= Datos(731:1096,1);
+%YEAR_2005= Datos(1097:1461,1);
+%YEAR_2006= Datos(1462:1826,1);
+%YEAR_2007= Datos(1827:2191,1);
+%YEAR_2008= Datos(2192:2557,1);
+%YEAR_2009= Datos(2558:2922,1);
+%YEAR_2010= Datos(2923:3287,1);
+%YEAR_2011= Datos(3288:3652,1);
+%YEAR_2012= Datos(3653:4018,1);
+%YEAR_2013= Datos(4019:4383,1);
+%YEAR_2014= Datos(4384:4748,1);
+
